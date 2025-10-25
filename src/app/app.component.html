@@ -27,8 +27,8 @@
 
  <div class="card">
    <h3 class="head"> Counter Application </h3>
-  <h2>{{count}}</h2>
-  <h2><strong>{{isEven}}</strong></h2>
+   <h2><strong [class]="{'gr' : isGreen}">{{isOdd}}</strong></h2>
+  <h2>Count : <span>{{count}}</span></h2>
   <div class="btn">
     <button (click)="inc()" class="add" [disabled]="isAvaliable"> Add + </button>
     <button (click)="res()" > Reset  </button>

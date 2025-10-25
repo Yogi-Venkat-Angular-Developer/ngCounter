@@ -12,23 +12,29 @@ export class AppComponent {
   topic = "Property-Binding"
   proImg = "https://www.ifourtechnolab.com/pics/What-is-Property-binding-and-how-to-implement-it-in-Angular.webp"
   isAvaliable = false;
-  isEven = true;
+  isGreen = true;
   count : number = 0;
+  isOdd = "Even";
 
-checkEvenOdd(){
-  if(this.count % 2 == 1){
-    this.isEven = false
-  }else{
-    this.isEven = true
+  checkIsEven(){
+    if(this.count %2 == 1){
+      this.isOdd= "Odd"
+      this.isGreen = false
+    }else{
+      this.isOdd = "Even"
+      this.isGreen = true
+    }
   }
-}
+
 
   inc(){
     if(this.count >= 10){
       this.isAvaliable = true;
+      this.count=0
     }else{
       this.count++
     }
+    this.checkIsEven()
 }
   dec(){
     if(this.count <= 0){
@@ -36,6 +42,7 @@ checkEvenOdd(){
     }else{
       this.count--
     }
+    this.checkIsEven()
   }
   
   res(){
